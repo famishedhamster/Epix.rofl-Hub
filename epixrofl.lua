@@ -10461,7 +10461,7 @@ local PL = Tab:NewSection("Prison Life")
 PL:NewDropdown("Give Gun", "Give urself a gun!!!11", {"M9", "Remington 870", "AK-47"}, function(currentOption)
     local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[currentOption].ITEMPICKUP
     local event = game:GetService("Workspace").Remote.ItemHandler
-    print(A_1.Parent)
+    print(event)
     Event:FireServer(A_1)
 end)
 
