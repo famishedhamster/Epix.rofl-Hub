@@ -10485,7 +10485,7 @@ PL:NewButton("Steal Guns [SS]",'takes GUNS.', function()
     NewGuiPart8.Position = UDim2.new(0, 0, 0, 60)
     NewGuiPart8.Font = Enum.Font.SourceSans
     NewGuiPart8.FontSize = Enum.FontSize.Size24
-    NewGuiPart8.Text = "Waiting for " .. item.Name
+    NewGuiPart8.Text = "Waiting for guns????"
     NewGuiPart8.TextWrapped = true
     local NewGuiPart9 = Instance.new("TextButton")
     NewGuiPart9.Name = "Twait"
