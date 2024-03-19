@@ -10458,12 +10458,78 @@ Section:NewButton("RemoteSpy [CS]","lets you view the games remotes idfk", funct
 end)
 
 local PL = Tab:NewSection("Prison Life")
-PL:NewDropdown("Give Gun", "Give urself a gun!!!11", {"M9", "Remington 870", "AK-47"}, function(currentOption)
-    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[currentOption].ITEMPICKUP
-    local event = game:GetService("Workspace").Remote.ItemHandler
-    print(A_1.Parent)
-    print(currentOption)
-    event:InvokeServer(A_1)
+PL:NewButton("Steal Guns [SS]",'takes GUNS.', function() 
+    --This script steals all items that fall on the ground, and can give you items
+
+    local Prison_ITEMS = game:GetService('Workspace')["Prison_ITEMS"].single
+
+
+    --weather or not to ignore if the item is missing
+    local ignore_err = true
+
+
+    local tigger = {
+        "Remington 870",
+        "M9",
+        "AK-47"
+    }
+    local NewGuiPart1 = Instance.new("ScreenGui")
+    NewGuiPart1.Parent = game.Players.LocalPlayer.PlayerGui
+    local NewGuiPart8 = Instance.new("TextLabel")
+    NewGuiPart8.Name = "Twait"
+    NewGuiPart8.Parent = NewGuiPart1
+    NewGuiPart8.Active = false
+    NewGuiPart8.AutomaticSize = "XY"
+    NewGuiPart8.BackgroundColor3 = Color3.new(0.913725, 0.819608, 0.101961)
+    NewGuiPart8.BorderSizePixel = 0
+    NewGuiPart8.Position = UDim2.new(0, 0, 0, 60)
+    NewGuiPart8.Font = Enum.Font.SourceSans
+    NewGuiPart8.FontSize = Enum.FontSize.Size24
+    NewGuiPart8.Text = "Waiting for " .. item
+    NewGuiPart8.TextWrapped = true
+    local NewGuiPart9 = Instance.new("TextButton")
+    NewGuiPart9.Name = "Twait"
+    NewGuiPart9.Parent = NewGuiPart1
+    NewGuiPart9.Active = false
+    NewGuiPart9.AutomaticSize = "XY"
+    NewGuiPart9.BackgroundColor3 = Color3.new(0.913725, 0.819608, 0.101961)
+    NewGuiPart9.BorderSizePixel = 0
+    NewGuiPart9.Position = UDim2.new(0, 0, 0, 100)
+    NewGuiPart9.Font = Enum.Font.SourceSans
+    NewGuiPart9.FontSize = Enum.FontSize.Size24
+    NewGuiPart9.Text = "Get guns"
+    NewGuiPart9.TextWrapped = true
+
+    function bigman(thing)
+        game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver[thing].ITEMPICKUP)
+    end
+
+    local success, err
+
+    NewGuiPart9.MouseButton1Up:Connect(function()
+        NewGuiPart9.Text = "Getting guns..."
+        for i=0, #tigger do
+            success,err = pcall(bigman, tigger[i])
+            if not success and not ignore_err then
+                NewGuiPart9.Text = "Failed: " .. err .. "  Item: " .. tostring(tigger[i])
+                wait(1)
+            end
+        end
+        NewGuiPart9.Text = "Get guns"
+        game.Players.LocalPlayer.Character.Humanoid.Health = 100
+    end)
+
+    game.Players.LocalPlayer.Character.Humanoid.died:Connect(function()
+        NewGuiPart1:Destroy()
+        NewGuiPart8:Destroy()
+        NewGuiPart9:Destroy()
+    end)
+
+    Prison_ITEMS.ChildAdded:Connect(function(thingthing) -- Detect when a new gun has been added.
+        NewGuiPart8.text = "Tried to steal: " .. thingthing.Name
+        game.Workspace.Remote.ItemHandler:InvokeServer(Prison_ITEMS[thingthing.Name].ITEMPICKUP)
+        NewGuiPart8.text = "Stole: " .. thingthing.Name
+    end)
 end)
 
 local WIP = Tab:NewSection("More scripts soon!")
