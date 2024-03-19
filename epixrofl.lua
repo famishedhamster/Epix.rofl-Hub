@@ -10462,7 +10462,7 @@ PL:NewDropdown("Give Gun", "Give urself a gun!!!11", {"M9", "Remington 870", "AK
     local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[currentOption].ITEMPICKUP
     local event = game:GetService("Workspace").Remote.ItemHandler
     print(event)
-    Event:InvokeServer(A_1)
+    event:InvokeServer(A_1)
 end)
 
 local WIP = Tab:NewSection("More scripts soon!")
