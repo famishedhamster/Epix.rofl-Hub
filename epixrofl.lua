@@ -10526,9 +10526,9 @@ PL:NewButton("Steal Guns [SS]",'takes GUNS.', function()
     end)
 
     Prison_ITEMS.ChildAdded:Connect(function(thingthing) -- Detect when a new gun has been added.
-        NewGuiPart8.text = "Tried to steal: " .. thingthing.Name
+        NewGuiPart8.Text = "Tried to steal: " .. thingthing.Name
         game.Workspace.Remote.ItemHandler:InvokeServer(Prison_ITEMS[thingthing.Name].ITEMPICKUP)
-        NewGuiPart8.text = "Stole: " .. thingthing.Name
+        NewGuiPart8.Text = "Stole: " .. thingthing.Name
     end)
 end)
 
