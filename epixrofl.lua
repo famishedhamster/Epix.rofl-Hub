@@ -1,7 +1,7 @@
---main stuff idk
+--Library
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("Epix.rofl hub V2", "Synapse")
+local Window = Library.CreateLib("Epix.rofl hub V0.3", "Synapse")
 
 -- Scripts Tab
 local Tab = Window:NewTab("Scripts")
@@ -15,7 +15,7 @@ end)
 Section:NewButton("Rizz Gui [Broken]", "Rizz up lego people", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/synnyyy/synergy/additional/rizzler",true))()
 end)
-Section:NewButton("Animation GUI [SS i believe, need to test]", "on skibidi?", function()
+Section:NewButton("Animation GUI [SS]", "on skibidi?", function()
     local Energize = Instance.new("ScreenGui")
     Energize.ResetOnSpawn = false
     local SideFrame = Instance.new("Frame")
@@ -1737,7 +1737,7 @@ Section:NewButton("Animation GUI [SS i believe, need to test]", "on skibidi?", f
         end
     end)
 end)
-Section:NewButton("Dex Viewer [CS]", "lets you view the games shit idk", function()
+Section:NewButton("Dex Viewer [CS i believe, need to test]", "lets you view the games shit idk", function()
     --loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
     CreateGui = function()
         local NewGuiPart1 = Instance.new("ScreenGui")
@@ -10444,6 +10444,22 @@ Section:NewButton("Dex Viewer [CS]", "lets you view the games shit idk", functio
         end)
         
         --moony
+end)
+Section:NewButton("RemoteSpy [CS]","lets you view the games remotes idfk", function() 
+    local owner = "Upbolt"
+    local branch = "revision"
+
+    local function webImport(file)
+        return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+    end
+
+    webImport("init")
+    webImport("ui/main")
+end)
+
+local PL = Tab:NewSection("Prison Life")
+PL:NewDropdown("Give Gun", "Give urself a gun!!!11", {"M9", "Remington 870", "AK-47"}, function(currentOption)
+    
 end)
 
 local WIP = Tab:NewSection("More scripts soon!")
