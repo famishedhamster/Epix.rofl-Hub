@@ -10456,6 +10456,9 @@ Section:NewButton("RemoteSpy [CS]","lets you view the games remotes idfk", funct
     webImport("init")
     webImport("ui/main")
 end)
+Section:NewButton("Player ESP","shows others. q to toggle", function() 
+    loadstring(game:HttpGet("https://pastebin.com/raw/s7viVmDR"))()
+end)
 
 local PL = Tab:NewSection("Prison Life")
 PL:NewButton("Prison Life Gui [Both?]",'pl game thingy', function() 
