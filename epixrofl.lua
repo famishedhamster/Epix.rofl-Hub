@@ -3,7 +3,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 
 local Window = Library.CreateLib("Epix.rofl hub V0.3", "Synapse")
 
--- Scripts Tab
+-- Scripts.AllGames Tab
 local Tab = Window:NewTab("Scripts")
 local Section = Tab:NewSection("All Games")
 Section:NewButton("Walk on Walls [SS]", "super mario galaxy shiz", function()
@@ -10456,9 +10456,14 @@ Section:NewButton("RemoteSpy [CS]","lets you view the games remotes idfk", funct
     webImport("init")
     webImport("ui/main")
 end)
-Section:NewButton("Player ESP","shows others. q to toggle", function() 
+Section:NewButton("Player ESP [CS]","shows others. q to toggle", function() 
     loadstring(game:HttpGet("https://pastebin.com/raw/s7viVmDR"))()
 end)
+Section:NewButton("Player Chams [CS]","shows others.", function() 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/vozoid/releases/main/viewport-chams"))()
+end)
+
+-- Scripts.PrisonLife
 
 local PL = Tab:NewSection("Prison Life")
 PL:NewButton("Prison Life Gui [Both?]",'pl game thingy', function() 
