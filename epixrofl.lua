@@ -1,7 +1,7 @@
 --Library
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("Epix.rofl hub V0.3", "Synapse")
+local Window = Library.CreateLib("Epix.rofl hub V0.4", "Synapse")
 
 -- Scripts.AllGames Tab
 local Tab = Window:NewTab("Scripts")
