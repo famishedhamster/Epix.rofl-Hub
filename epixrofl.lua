@@ -12,7 +12,7 @@ end)
 Section:NewButton("Bypass [SS]", "BetterBypass is epic (vile stuff)", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Synergy-Networks/products/main/BetterBypasser/loader.lua",true))()
 end)
-Section:NewButton("Rizz Gui [Broken]", "Rizz up lego people", function()
+Section:NewButton("Rizz Gui [SS]", "Rizz up lego people", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/synnyyy/synergy/additional/rizzler",true))()
 end)
 Section:NewButton("Animation GUI [SS]", "on skibidi?", function()
@@ -1737,7 +1737,7 @@ Section:NewButton("Animation GUI [SS]", "on skibidi?", function()
         end
     end)
 end)
-Section:NewButton("Dex Viewer [CS i believe, need to test]", "lets you view the games shit idk", function()
+Section:NewButton("Dex Viewer [CS?]", "lets you view the games shit idk", function()
     --loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
     CreateGui = function()
         local NewGuiPart1 = Instance.new("ScreenGui")
@@ -10544,13 +10544,13 @@ local WIP = Tab:NewSection("More scripts soon!")
 -- Player Tab
 local Tab1 = Window:NewTab("Player Cheats")
 local Section1 = Tab1:NewSection("Player stuff idk")
-Section1:NewSlider("Walkspeed [SS]", "changes ur walkspeed", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+Section1:NewSlider("Walkspeed [SS]", "changes ur walkspeed", 500, 16, function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
-Section1:NewSlider("Jump Power [SS]", "changes ur jump power", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+Section1:NewSlider("Jump Power [SS]", "changes ur jump power", 500, 50, function(s)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
-Section1:NewSlider("Gravity [SS]", "changes ur gravity (Default is 196.2 but you cant do that so do 197)", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+Section1:NewSlider("Gravity [SS]", "changes ur gravity (Default is 196.2 but you cant do that so do 197)", 500, 0, function(s)
     game.Workspace.Gravity = s
 end)
 
@@ -10562,4 +10562,18 @@ Section2:NewButton("Nameless Admin", "gives you nameless admin without byfron tr
 end)
 Section2:NewButton("Infinite Yield", "infinite yields", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
+
+--Credits
+local tab3 = Window:NewTab("Credits and Updates")
+local Section3 = tab3:NewSection("Credits")
+Section3:NewLabel("famished_hamster - epixrofl fella")--Credits to dev
+Section3:NewLabel("I DID NOT MAKE ALL OF THE SCRIPTS IN THIS HUB!!!!!")
+Section3:NewLabel("if you want the OG scripts that I stole, go into the github source its not complex")
+Section3:NewLabel("copy buttons for the stuff below if you want it, paste into web browser! sigma!")
+Section2:NewButton("copy Discord", "Wowzers!", function()
+    setclipboard("https://discord.gg/8VzugtPN7G")
+end)
+Section2:NewButton("github Source", "holy shit", function()
+    setclipboard("https://github.com/famishedhamster/Epix.rofl-Hub")
 end)
