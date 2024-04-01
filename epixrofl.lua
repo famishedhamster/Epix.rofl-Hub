@@ -10569,7 +10569,7 @@ local tab3 = Window:NewTab("Credits and Updates")
 local Section3 = tab3:NewSection("Credits")
 Section3:NewLabel("famished_hamster - epixrofl fella")--Credits to dev
 Section3:NewLabel("I DID NOT MAKE ALL OF THE SCRIPTS IN THIS HUB!!!!!")
-Section3:NewLabel("if you want the OG scripts that I stole, go into the github source its not complex")
+Section3:NewLabel("if you want the OG scripts that I stole go to the github source")
 Section3:NewLabel("copy buttons for the stuff below if you want it, paste into web browser! sigma!")
 Section3:NewButton("copy Discord", "Wowzers!", function()
     setclipboard("https://discord.gg/8VzugtPN7G")
